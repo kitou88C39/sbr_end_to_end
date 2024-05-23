@@ -18,14 +18,10 @@ public class StudentService implements IStudentService {
 
     @Override
     public Student addStudent(Student student) {
-        if (studentAlreadyExist(student.getDepartment())){
+        if (studentAlreadyExists(student.getEmail())){
             throw new StudentAlreadyExistsException(student.getEmail()+"already exsits!")
         }
             return studentRepository.save(student);
-    }
-
-    @Override
-    public void deleteStudent(Long id) {
     }
 
     @Override
@@ -34,6 +30,6 @@ public class StudentService implements IStudentService {
     }
 
     private boolean studentAlreadyExists(String email) {
-        return studentRepository.findByEmail(email);
+        return studentRepository.findByEmail(email).isPresent();
     }
 }
