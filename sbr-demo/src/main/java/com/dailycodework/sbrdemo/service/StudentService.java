@@ -29,6 +29,16 @@ public class StudentService implements IStudentService {
         return null;
     }
 
+    @Override
+    public Student getStudentById(Long id) {
+        return null;
+    }
+
+    @Override
+    public void deleteStudent(Long id) {
+
+    }
+
     private boolean studentAlreadyExists(String email) {
         return studentRepository.findByEmail(email).isPresent();
     }
