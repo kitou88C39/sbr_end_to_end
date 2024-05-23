@@ -5,6 +5,12 @@ import org.springframework.stereotype.Service;
 import com.dailycodework.sbrdemo.model.Student;
 import com.dailycodework.sbrdemo.repository.StudentRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.jpa.repository.JpaRepository;
+import com.dailycodework.sbrdemo.model.Student;
+
+public interface StudentRepository extends JpaRepository<Student, Long> {
+    // 他のメソッドがあればここに追加
+}
 
 @Service
 @RequiredArgsConstructor
@@ -26,7 +32,9 @@ public class StudentService implements IStudentService {
 
     @Override
     public Student updateStudent(Student student, Long id) {
-        return null;
+        return studentRepository.findById(id).map(st -> {
+            st.setFirstName(student.getFirstName());
+        });
     }
 
     @Override
