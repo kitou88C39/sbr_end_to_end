@@ -8,8 +8,8 @@ import com.dailycodework.sbrdemo.repository.StudentRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface StudentRepository extends JpaRepository<Student, Long> {
-    // 他のメソッドがあればここに追加
+public interface StudentService extends JpaRepository<Student, Long> {
+
 }
 
 @Service
