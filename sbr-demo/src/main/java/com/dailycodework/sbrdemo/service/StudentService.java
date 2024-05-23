@@ -13,12 +13,13 @@ public class StudentService implements IStudentService {
 
     @Override
     public List<Student> getStudents() {
-        return null;
+        return studentRrepository.findAll();
     }
 
     @Override
     public Student addStudent(Student student) {
-        return null;
+
+        return studentRrepository.save(student);
     }
 
 }
