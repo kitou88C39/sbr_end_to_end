@@ -19,10 +19,13 @@ public class StudentService implements IStudentService {
     @Override
     public Student addStudent(Student student) {
         if (studentAlreadyExist(student.getDepartment())){
-            throw new StudentAlreadyExistsException("already exsits!")
+            throw new StudentAlreadyExistsException(student.getEmail()+"already exsits!")
         }
-
             return studentRrepository.save(student);
     }
 
+    @Override
+    public Student updateStudent(Student student, Long id) {
+        return null;
+    }
 }
