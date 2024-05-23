@@ -2,6 +2,7 @@ package com.dailycodework.sbrdemo.controller;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -32,6 +33,11 @@ public class StudentController {
     @PutMapping("/update/{id}")
     public Student updateStudent(@RequestBody Student student, @PathVariable Long id) {
         return studentService.updateStudent(student, id);
+    }
+
+    @DeleteMapping("/delete/{id}")
+    public void deleteStudent(@PathVariable Long id) {
+        studentService.deleteStudent(id);
     }
 
 }
