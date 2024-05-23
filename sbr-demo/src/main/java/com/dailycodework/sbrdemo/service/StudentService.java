@@ -3,17 +3,17 @@ package com.dailycodework.sbrdemo.service;
 import org.springframework.stereotype.Service;
 
 import com.dailycodework.sbrdemo.model.Student;
-import com.dailycodework.sbrdemo.repository.StudentRrepository;
+import com.dailycodework.sbrdemo.repository.StudentRepository;
 import lombok.RequiredArgsConstructor;
 
 @Service
 @RequiredArgsConstructor
 public class StudentService implements IStudentService {
-    private final StudentRrepository studentRrepository;
+    private final StudentRepository studentRepository;
 
     @Override
     public List<Student> getStudents() {
-        return studentRrepository.findAll();
+        return studentRepository.findAll();
     }
 
     @Override
@@ -21,7 +21,7 @@ public class StudentService implements IStudentService {
         if (studentAlreadyExist(student.getDepartment())){
             throw new StudentAlreadyExistsException(student.getEmail()+"already exsits!")
         }
-            return studentRrepository.save(student);
+            return studentRepository.save(student);
     }
 
     @Override
