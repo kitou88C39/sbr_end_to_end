@@ -33,8 +33,7 @@ public class StudentService implements IStudentService {
         return null;
     }
 
-}
-
-private boolean studentAlreadyExists(String email) {
-return studentRrepository.findByEmail(email);
+    private boolean studentAlreadyExists(String email) {
+        return studentRrepository.findByEmail(email);
+    }
 }
