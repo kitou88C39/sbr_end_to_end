@@ -34,6 +34,6 @@ public class StudentService implements IStudentService {
     }
 
     private boolean studentAlreadyExists(String email) {
-        return studentRrepository.findByEmail(email);
+        return studentRepository.findByEmail(email);
     }
 }
