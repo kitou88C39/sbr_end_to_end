@@ -2,11 +2,11 @@ package com.dailycodework.sbrdemo.service;
 
 import org.springframework.stereotype.Service;
 
+import com.dailycodework.sbrdemo.exception.StudentNotFoundException;
 import com.dailycodework.sbrdemo.model.Student;
 import com.dailycodework.sbrdemo.repository.StudentRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.jpa.repository.JpaRepository;
-import com.dailycodework.sbrdemo.model.Student;
 
 public interface StudentRepository extends JpaRepository<Student, Long> {
     // 他のメソッドがあればここに追加
@@ -43,12 +43,14 @@ public class StudentService implements IStudentService {
 
     @Override
     public Student getStudentById(Long id) {
-        return null;
+        return studentRepository.findById(id)
+                .orElseThrow(() -> new StudentNotFoundException("Sorry,no student found with the Id:" + id));
     }
 
     @Override
     public void deleteStudent(Long id) {
-
+        if (!studentRepository.existsById(id))
+            throw new StudentNotFoundException("Sorry, student not found");
     }
 
     private boolean studentAlreadyExists(String email) {
