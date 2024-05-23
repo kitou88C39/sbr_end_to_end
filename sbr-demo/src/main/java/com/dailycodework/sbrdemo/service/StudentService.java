@@ -28,12 +28,13 @@ public class StudentService implements IStudentService {
     public void deleteStudent(Long id) {
     }
 
-    private boolean studentAlreadyExists(String email) {
-
-    }
-
     @Override
     public Student updateStudent(Student student, Long id) {
         return null;
     }
+
+}
+
+private boolean studentAlreadyExists(String email) {
+return studentRrepository.findByEmail(email);
 }
