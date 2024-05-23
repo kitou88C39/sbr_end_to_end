@@ -2,8 +2,8 @@ package com.dailycodework.sbrdemo.service;
 
 import org.springframework.stereotype.Service;
 
+import com.dailycodework.sbrdemo.model.Student;
 import com.dailycodework.sbrdemo.repository.StudentRrepository;
-
 import lombok.RequiredArgsConstructor;
 
 @Service
@@ -18,8 +18,11 @@ public class StudentService implements IStudentService {
 
     @Override
     public Student addStudent(Student student) {
+        if (studentAlreadyExist(student.getDepartment())){
+            throw new StudentAlreadyExistsException("already exsits!")
+        }
 
-        return studentRrepository.save(student);
+            return studentRrepository.save(student);
     }
 
 }
