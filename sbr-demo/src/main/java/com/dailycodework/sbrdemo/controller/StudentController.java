@@ -40,4 +40,8 @@ public class StudentController {
         studentService.deleteStudent(id);
     }
 
+    public void getStudentById(@PathVariable Long id) {
+        return studentService.getStudentById(id);
+    }
+
 }
