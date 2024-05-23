@@ -1,5 +1,7 @@
 package com.dailycodework.sbrdemo.repository;
 
-public interface StudentRrepository {
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface StudentRrepository extends JpaRepository<Student, Long> {
 
 }
