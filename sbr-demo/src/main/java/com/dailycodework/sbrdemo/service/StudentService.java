@@ -25,6 +25,14 @@ public class StudentService implements IStudentService {
     }
 
     @Override
+    public void deleteStudent(Long id) {
+    }
+
+    private boolean studentAlreadyExists(String email) {
+
+    }
+
+    @Override
     public Student updateStudent(Student student, Long id) {
         return null;
     }
