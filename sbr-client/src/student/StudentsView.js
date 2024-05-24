@@ -6,11 +6,17 @@ const StudentsView = () => {
 
   useEffect(() => {
     loadStudents();
-  },[]);
+  }, []);
 
   const loadStudents = async () => {
-    const result = await axios.get('http://localhost:9192/students');
-    setStudents(result.data);
+    const result = await axios.get('http://localhost:9192/students', {
+      validateStatus: () => {
+        return true;
+      },
+    });
+    if (result.status === 200) {
+      setStudents(result.data);
+    }
   };
   return (
     <section>
