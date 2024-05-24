@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 const StudentsView = () => {
-  const [student, setStudent] = useState([]);
+  const [students, setStudents] = useState([]);
   return (
     <section>
       <table>
@@ -15,10 +15,13 @@ const StudentsView = () => {
             <th>Actions</th>
           </tr>
         </thead>
+
         <tbody>
-          <tr>
-            <td></td>
-          </tr>
+          {students((student, index) => (
+            <tr>
+              <td></td>
+            </tr>
+          ))}
         </tbody>
       </table>
     </section>
