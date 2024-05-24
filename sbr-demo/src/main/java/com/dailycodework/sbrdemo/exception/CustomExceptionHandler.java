@@ -14,11 +14,10 @@ public class CustomExceptionHandler {
     @ExceptionHandler(MethodArgumentNotValidException.class)
     public Map<String, String> handleException(MethodArgumentNotValidException ex) {
         Map<String, String> errors = new HashMap<>();
-        for (FieldError error : ex.getBindingResult().getFieldErrors()) {
-            errors.put(error.getField(), error.getDefaultMessage());
-        }
-        return errors;
-    }
+        ex.getBindingResult()
+            .getFieldError()
+            .forEach(errors.put(.getField, getDefaultMessage()));
+        }return errors;
 
     @ResponseStatus(HttpStatus.NOT_FOUND)
     @ExceptionHandler(StudentNotFoundException.class)
