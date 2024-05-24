@@ -4,12 +4,18 @@ import './App.css';
 import Home from './Home';
 import NavBar from './components/common/NavBar.js';
 import StudentsView from './components/student/StudentsView.js';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 function App() {
   return (
     <div className='App'>
       <NavBar />
       <StudentsView />
+      <Router>
+        <Routes>
+          <Route exact path='/' element={<Home />}></Route>
+        </Routes>
+      </Router>
     </div>
   );
 }
