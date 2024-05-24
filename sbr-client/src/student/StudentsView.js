@@ -28,7 +28,7 @@ const StudentsView = () => {
             <th>Last Name</th>
             <th>Email</th>
             <th>Depatment</th>
-            <th>Actions</th>
+            <th colSpan='3'>Actions</th>
           </tr>
         </thead>
 
@@ -42,9 +42,15 @@ const StudentsView = () => {
               <td>{student.lastName}</td>
               <td>{student.email}</td>
               <td>{student.deparment}</td>
-              <td>View</td>
-              <td>Update</td>
-              <td>Delete</td>
+              <td className='mx-2'>
+                <button className='btn btn-info'>View</button>
+              </td>
+              <td className='mx-2'>
+                <button className='btn btn-warning'>Update</button>
+              </td>
+              <td className='mx-2'>
+                <button className='btn btn-danger'>delete</button>
+              </td>
             </tr>
           ))}
         </tbody>
