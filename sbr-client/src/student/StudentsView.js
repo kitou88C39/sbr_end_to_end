@@ -1,7 +1,17 @@
 import React from 'react';
 
 const StudentsView = () => {
-  return <div>StudentsView</div>;
+  return (
+    <section>
+      <table>
+        <thead>
+          <tr>
+            <th></th>
+          </tr>
+        </thead>
+      </table>
+    </section>
+  );
 };
 
 export default StudentsView;
