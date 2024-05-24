@@ -1,7 +1,12 @@
 import React, { useState } from 'react';
+import axios from 'axios';
 
 const StudentsView = () => {
   const [students, setStudents] = useState([]);
+
+  const loadStudents = async () => {
+    const result = await axios.get('');
+  };
   return (
     <section>
       <table>
