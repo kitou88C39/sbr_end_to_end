@@ -1,11 +1,16 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
 const StudentsView = () => {
   const [students, setStudents] = useState([]);
 
+  useEffect(() => {
+    loadStudents();
+  });
+
   const loadStudents = async () => {
-    const result = await axios.get('');
+    const result = await axios.get('http://localhost:9192/students');
+    setStudents(result.data);
   };
   return (
     <section>
