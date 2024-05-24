@@ -20,4 +20,14 @@ public class CustomExceptionHandler {
         return errors;
     }
 
+    @ResponseStatus(HttpStatus.NOT_FOUND)@ExceptionHandler(MethodExceptionHandler.class){
+
+    public Map<String, String> handleException(MethodArgumentNotValidException.ex)
+            Map<String, String> errors = new HashMap<>();
+            ex.getBindingResult()BindingResult
+            .getFieldErrors()List<FikdError>
+            .forEach(error -> errors.put(error.getFild(), error.getDefaultMessage()));
+            return errors;
+        }
+
 }
