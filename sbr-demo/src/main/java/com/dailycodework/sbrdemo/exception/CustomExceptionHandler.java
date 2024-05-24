@@ -12,22 +12,20 @@ public class CustomExceptionHandler {
 
     @ResponseStatus(HttpStatus.BAD_REQUEST)@ExceptionHandler(MethodExceptionHandler.class){
 
-    public Map<String, String> handleException(MethodArgumentNotValidException.ex)
+    public Map<String, String> handleException(MethodArgumentNotValidException ex)
         Map<String, String> errors = new HashMap<>();
         ex.getBindingResult()BindingResult
-        .getFieldErrors()List<FikdError>
-        .forEach(error -> errors.put(error.getFild(), error.getDefaultMessage()));
+            .getFieldErrors()List<FikdError>
+            .forEach(error -> errors.put(error.getFild(), error.getDefaultMessage()));
         return errors;
     }
 
-    @ResponseStatus(HttpStatus.NOT_FOUND)@ExceptionHandler(MethodExceptionHandler.class){
+}@ResponseStatus(HttpStatus.NOT_FOUND)@ExceptionHandler(MethodExceptionHandler.class){
 
-    public Map<String, String> handleException(MethodArgumentNotValidException.ex)
-            Map<String, String> errors = new HashMap<>();
-            ex.getBindingResult()BindingResult
-            .getFieldErrors()List<FikdError>
-            .forEach(error -> errors.put(error.getFild(), error.getDefaultMessage()));
-            return errors;
-        }
+    public Map<String, String> userNotFound(StudentNotFoundException ex) {
+        Map<String, String> errors = new HashMap<>();
+        errors.put("error", ex.getMessage());
+        return errors;
+    }
 
 }
