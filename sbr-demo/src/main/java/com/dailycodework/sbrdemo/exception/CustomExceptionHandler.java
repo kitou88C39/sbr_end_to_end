@@ -6,6 +6,7 @@ import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
+
 import java.util.*;
 
 @RestControllerAdvice
@@ -15,10 +16,10 @@ public class CustomExceptionHandler {
     @ExceptionHandler(MethodArgumentNotValidException.class)
     public Map<String, String> handleException(MethodArgumentNotValidException ex) {
         Map<String, String> errors = new HashMap<>();
-        ex.getBindingResult()
-            .getFieldError()
-            .forEach(errors.put(.getField, getDefaultMessage()));
-        return errors
+        BindingResult bindingResult = ex.getBindingResult();
+        bindingResult.getFieldErrors()
+                .forEach(fieldError -> errors.put(fieldError.getField(), fieldError.getDefaultMessage()));
+        return errors;
     }
 
     @ResponseStatus(HttpStatus.NOT_FOUND)
