@@ -17,7 +17,8 @@ public class CustomExceptionHandler {
         ex.getBindingResult()
             .getFieldError()
             .forEach(errors.put(.getField, getDefaultMessage()));
-        }return errors;
+        return errors
+    }
 
     @ResponseStatus(HttpStatus.NOT_FOUND)
     @ExceptionHandler(StudentNotFoundException.class)
