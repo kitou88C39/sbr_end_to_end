@@ -22,7 +22,13 @@ const StudentsView = () => {
               <th scope='row' key={index}>
                 {index + 1}
               </th>
-              <td></td>
+              <td>{student.firstName}</td>
+              <td>{student.lastName}</td>
+              <td>{student.email}</td>
+              <td>{student.deparment}</td>
+              <td>View</td>
+              <td>Update</td>
+              <td>Delete</td>
             </tr>
           ))}
         </tbody>
