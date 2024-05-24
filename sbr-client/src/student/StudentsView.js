@@ -6,7 +6,7 @@ const StudentsView = () => {
 
   useEffect(() => {
     loadStudents();
-  });
+  },[]);
 
   const loadStudents = async () => {
     const result = await axios.get('http://localhost:9192/students');
