@@ -18,7 +18,10 @@ const StudentsView = () => {
 
         <tbody>
           {students((student, index) => (
-            <tr>
+            <tr key={student.id}>
+              <th scope='row' key={index}>
+                {index + 1}
+              </th>
               <td></td>
             </tr>
           ))}
