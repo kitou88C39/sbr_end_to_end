@@ -28,4 +28,11 @@ public class CustomExceptionHandler {
         return errors;
     }
 
+    @ResponseStatus(HttpStatus.BAD_REQUEST)@ExceptionHandler(StudentAlreadyExistsException.class){
+
+    public Map<String, String> userNotFound(StudentAlreadyExistsException ex) {
+        Map<String, String> errors = new HashMap<>();
+        errors.put("error", ex.getMessage());
+        return errors;
+    }
 }
