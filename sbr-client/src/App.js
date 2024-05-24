@@ -9,9 +9,9 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 function App() {
   return (
     <div className='App'>
-      <NavBar />
-      <StudentsView />
       <Router>
+        <NavBar />
+
         <Routes>
           <Route exact path='/' element={<Home />}></Route>
           <Route exact path='/view-students' element={<StudentsView />}></Route>
