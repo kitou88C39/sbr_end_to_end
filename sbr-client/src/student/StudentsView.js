@@ -20,9 +20,9 @@ const StudentsView = () => {
   };
   return (
     <section>
-      <table>
+      <table className='table table-bordered table-hover'>
         <thead>
-          <tr>
+          <tr className='text-center'>
             <th>ID</th>
             <th>First Name</th>
             <th>Last Name</th>
@@ -32,7 +32,7 @@ const StudentsView = () => {
           </tr>
         </thead>
 
-        <tbody>
+        <tbody className='text-center'>
           {students((student, index) => (
             <tr key={student.id}>
               <th scope='row' key={index}>
