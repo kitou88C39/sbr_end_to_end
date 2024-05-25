@@ -26,6 +26,7 @@ const AddStudent = () => {
             id='firstName'
             required
             value={firstName}
+            onChange={(e) => handleInputChange(e)}
           />
         </div>
 
@@ -40,6 +41,7 @@ const AddStudent = () => {
             id='lastName'
             required
             value={lastName}
+            onChange={(e) => handleInputChange(e)}
           />
         </div>
 
@@ -54,6 +56,7 @@ const AddStudent = () => {
             id='email'
             required
             value={email}
+            onChange={(e) => handleInputChange(e)}
           />
         </div>
 
@@ -68,6 +71,7 @@ const AddStudent = () => {
             id='department'
             required
             value={department}
+            onChange={(e) => handleInputChange(e)}
           />
         </div>
       </from>
