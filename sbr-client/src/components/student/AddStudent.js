@@ -33,16 +33,30 @@ const AddStudent = () => {
         </div>
 
         <div className='input-group mb-5'>
-          <label className='input-group-text' htmlFor='lastName'>
-            Last Name
+          <label className='input-group-text' htmlFor='email'>
+            Email
           </label>
           <input
             className='form-controll col-sm-6'
-            type='text'
-            name='lastName'
-            id='lastName'
+            type='email'
+            name='email'
+            id='email'
             required
-            value={lastName}
+            value={email}
+          />
+        </div>
+
+        <div className='input-group mb-5'>
+          <label className='input-group-text' htmlFor='email'>
+            Email
+          </label>
+          <input
+            className='form-controll col-sm-6'
+            type='email'
+            name='email'
+            id='email'
+            required
+            value={email}
           />
         </div>
       </from>
