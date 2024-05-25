@@ -7,6 +7,11 @@ const AddStudent = () => {
     email: '',
     department: '',
   });
+  const { firstName, lastName, email, department } = student;
+
+  const handleInputChange = (e) => {
+    setStudent({ ...student, [e.target.name]: e.target.value });
+  };
   return (
     <div className='col-sm-8 py-2 px-5'>
       <from>
