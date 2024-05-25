@@ -4,6 +4,7 @@ import './App.css';
 import Home from './Home';
 import NavBar from './components/common/NavBar.js';
 import StudentsView from './components/student/StudentsView.js';
+import AddStudent from './components/student/AddStudent.js';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 function App() {
