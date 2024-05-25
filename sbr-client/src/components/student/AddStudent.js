@@ -47,16 +47,16 @@ const AddStudent = () => {
         </div>
 
         <div className='input-group mb-5'>
-          <label className='input-group-text' htmlFor='email'>
-            Email
+          <label className='input-group-text' htmlFor='department'>
+            Department
           </label>
           <input
             className='form-controll col-sm-6'
-            type='email'
-            name='email'
-            id='email'
+            type='text'
+            name='department'
+            id='department'
             required
-            value={email}
+            value={department}
           />
         </div>
       </from>
