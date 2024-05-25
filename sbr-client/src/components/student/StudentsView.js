@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import { FaTrashAlt, FaEdit } from 'react-icons/fa';
+import { FaTrashAlt, FaEdit, FaEye } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
 const StudentsView = () => {
@@ -46,10 +46,10 @@ const StudentsView = () => {
               <td>{student.deparment}</td>
               <td className='mx-2'>
                 <Link
-                  to={`/edit-student/${student.id}`}
-                  className='btn btn-warning'
+                  to={`/student-profile/${student.id}`}
+                  className='btn btn-info'
                 >
-                  <FaEdit />
+                  <FaEye />
                 </Link>
               </td>
               <td className='mx-2'>
