@@ -20,6 +20,11 @@ const StudentsView = () => {
       setStudents(result.data);
     }
   };
+
+  const handleDelete = async (id) => {
+    await axios.delete('http://localhost:9192/students');
+  };
+
   return (
     <section>
       <table className='table table-bordered table-hover shadow'>
