@@ -1,6 +1,12 @@
-import React from 'react';
+import { useState } from 'react';
 
 const AddStudent = () => {
+  const [student, setStudent] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    department: '',
+  });
   return (
     <div className='col-sm-8 py-2 px-5'>
       <from>
