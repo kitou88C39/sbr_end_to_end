@@ -22,7 +22,8 @@ const StudentsView = () => {
   };
 
   const handleDelete = async (id) => {
-    await axios.delete('http://localhost:9192/students');
+    await axios.delete(`http://localhost:9192/students/delete/${id}`);
+    loadStudents();
   };
 
   return (
@@ -66,7 +67,10 @@ const StudentsView = () => {
                 </Link>
               </td>
               <td className='mx-2'>
-                <button className='btn btn-danger'>
+                <button
+                  className='btn btn-danger'
+                  onChange={(e) => handleDelete(e)}
+                >
                   <FaTrashAlt />
                 </button>
               </td>
