@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 
 const AddStudent = () => {
   const [student, setStudent] = useState({
@@ -13,6 +14,11 @@ const AddStudent = () => {
   const handleInputChange = (e) => {
     setStudent({ ...student, [e.target.name]: e.target.value });
   };
+
+  const savaStudent = async () => {
+    await axios.post('');
+  };
+
   return (
     <div className='col-sm-8 py-2 px-5'>
       <from>
