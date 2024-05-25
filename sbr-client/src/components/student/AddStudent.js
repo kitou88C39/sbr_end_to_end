@@ -74,6 +74,12 @@ const AddStudent = () => {
             onChange={(e) => handleInputChange(e)}
           />
         </div>
+
+        <div className='col-sm-2'>
+          <button type='submit' className='btn btn-outline-warning btn-lg'>
+            Save
+          </button>
+        </div>
       </from>
     </div>
   );
