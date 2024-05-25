@@ -69,7 +69,7 @@ const StudentsView = () => {
               <td className='mx-2'>
                 <button
                   className='btn btn-danger'
-                  onChange={(e) => handleDelete(e)}
+                  onChange={() => handleDelete(student.id)}
                 >
                   <FaTrashAlt />
                 </button>
