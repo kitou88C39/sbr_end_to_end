@@ -16,8 +16,11 @@ const StudentProfile = () => {
                   className='rounded-circle img-fluid'
                   style={{ width: 150 }}
                 />
-                <div className='col-sm-9'>
-                  <h5 className='mb-0'>Department</h5>
+
+                <div className='row'>
+                  <div className='col-sm-9'>
+                    <h5 className='mb-0'>Department</h5>
+                  </div>
                 </div>
 
                 <div className='col-sm-9'>
