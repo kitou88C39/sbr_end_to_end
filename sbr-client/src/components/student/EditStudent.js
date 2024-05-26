@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useNavigate, useState } from 'react';
+import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 const EditStudent = () => {
-  return let navigate = useNavigate();
+  let navigate = useNavigate();
   const [student, setStudent] = useState({
     firstName: '',
     lastName: '',
@@ -16,7 +18,7 @@ const EditStudent = () => {
 
   const savaStudent = async (e) => {
     e.preventDefault();
-    await axios.post('http://localhost:9192/students', student);
+    await axios.put(`http://localhost:9192/students/update/${id}`, student);
     navigate('/view-students');
   };
 
