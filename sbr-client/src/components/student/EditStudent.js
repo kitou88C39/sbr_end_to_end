@@ -16,7 +16,7 @@ const EditStudent = () => {
     setStudent({ ...student, [e.target.name]: e.target.value });
   };
 
-  const savaStudent = async (e) => {
+  const updateStudent = async (e) => {
     e.preventDefault();
     await axios.put(`http://localhost:9192/students/update/${id}`, student);
     navigate('/view-students');
@@ -24,7 +24,8 @@ const EditStudent = () => {
 
   return (
     <div className='col-sm-8 py-2 px-5'>
-      <from onChange={(e) => savaStudent(e)}>
+      <h2 className='mt-5'>Edit Student</h2>
+      <from onChange={(e) => updateStudent(e)}>
         <div className='input-group mb-5'>
           <label className='input-group-text' htmlFor='FirstName'>
             First Name
