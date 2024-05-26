@@ -1,4 +1,5 @@
 import React, { useEffect, useNavigate, useState } from 'react';
+import { FaTrashAlt, FaEdit, FaEye } from 'react-icons/fa';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 
@@ -13,12 +14,14 @@ const EditStudent = () => {
   const { firstName, lastName, email, department } = student;
 
   useEffect(() => {
-    loadStudents();
+    loadStudent();
   }, []);
 
-  const loadStudents = async () => {
-    const result = await axios.get('http://localhost:9192/students');
-    setStudents(result.data);
+  const loadStudent = async () => {
+    const result = await axios.get(
+      `http://localhost:9192/students/student/${id}`
+    );
+    setStudent(result.data);
   };
 
   const handleInputChange = (e) => {
