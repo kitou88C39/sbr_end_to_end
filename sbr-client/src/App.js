@@ -5,6 +5,7 @@ import Home from './Home';
 import NavBar from './components/common/NavBar.js';
 import StudentsView from './components/student/StudentsView.js';
 import AddStudent from './components/student/AddStudent.js';
+import EditStudent from './components/student/EditStudent.js';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
           <Route exact path='/' element={<Home />}></Route>
           <Route exact path='/view-students' element={<StudentsView />}></Route>
           <Route exact path='/add-students' element={<AddStudent />}></Route>
+          <Route exact path='/edit-students' element={<EditStudent />}></Route>
         </Routes>
       </Router>
     </main>
