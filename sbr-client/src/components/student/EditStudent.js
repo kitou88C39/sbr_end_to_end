@@ -1,4 +1,4 @@
-import React, { useNavigate, useState } from 'react';
+import React, { useEffect, useNavigate, useState } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 
@@ -11,6 +11,21 @@ const EditStudent = () => {
     department: '',
   });
   const { firstName, lastName, email, department } = student;
+
+  useEffect(() => {
+    loadStudents();
+  }, []);
+
+  const loadStudents = async () => {
+    const result = await axios.get('http://localhost:9192/students', {
+      validateStatus: () => {
+        return true;
+      },
+    });
+    if (result.status === 302) {
+      setStudents(result.data);
+    }
+  };
 
   const handleInputChange = (e) => {
     setStudent({ ...student, [e.target.name]: e.target.value });
