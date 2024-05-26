@@ -1,5 +1,4 @@
 import React, { useEffect, useNavigate, useState } from 'react';
-import { FaTrashAlt, FaEdit, FaEye } from 'react-icons/fa';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 
