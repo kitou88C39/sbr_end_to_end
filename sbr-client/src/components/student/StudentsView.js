@@ -16,7 +16,7 @@ const StudentsView = () => {
         return true;
       },
     });
-    if (result.status === 200) {
+    if (result.status === 302) {
       setStudents(result.data);
     }
   };
