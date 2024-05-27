@@ -30,7 +30,7 @@ const StudentsView = () => {
 
   return (
     <section>
-      <Search />
+      <Search search={search} setSearch={setSearch} />
       <table className='table table-bordered table-hover shadow'>
         <thead>
           <tr className='text-center'>
