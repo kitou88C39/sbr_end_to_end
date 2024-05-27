@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { FaTrashAlt, FaEdit, FaEye } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import Search from '../common/Search';
 
 const StudentsView = () => {
   const [students, setStudents] = useState([]);
@@ -28,6 +29,7 @@ const StudentsView = () => {
 
   return (
     <section>
+      <Search />
       <table className='table table-bordered table-hover shadow'>
         <thead>
           <tr className='text-center'>
