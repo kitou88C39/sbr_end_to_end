@@ -22,6 +22,26 @@ const StudentProfile = () => {
                   className='rounded-circle img-fluid'
                   style={{ width: 150 }}
                 />
+                <div>
+                  <div>
+                    <div>
+                      <div>
+                        <button
+                          type='button'
+                          className='btn btn-outline-primary'
+                        >
+                          Call
+                        </button>
+                        <button
+                          type='button'
+                          className='btn btn-outline-warning ms-1'
+                        >
+                          Message
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
 
                 <div className='row'>
                   <div className='col-sm-3'>
