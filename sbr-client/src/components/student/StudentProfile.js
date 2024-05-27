@@ -1,13 +1,20 @@
-import React, { useState, useNavigate } from 'react';
+import React, { useState } from 'react';
+import axios from 'axios';
 
 const StudentProfile = () => {
-  let navigate = useNavigate();
   const [student, setStudent] = useState({
     firstName: '',
     lastName: '',
     email: '',
     department: '',
   });
+
+  const loadStudent = async () => {
+    const result = await axios.get(
+      `http://localhost:9192/students/student/${id}`
+    );
+    setStudent(result.data);
+  };
 
   return (
     <section style={{ backgroudColor: 'whitesmoke' }}>
