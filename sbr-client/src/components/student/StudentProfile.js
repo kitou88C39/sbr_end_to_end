@@ -1,8 +1,14 @@
-import React, { useState } from 'react';
-
-const [student, setStudent] = useState([]);
+import React, { useState, useNavigate } from 'react';
 
 const StudentProfile = () => {
+  let navigate = useNavigate();
+  const [student, setStudent] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    department: '',
+  });
+
   return (
     <section style={{ backgroudColor: 'whitesmoke' }}>
       <div className='container py-5'>
