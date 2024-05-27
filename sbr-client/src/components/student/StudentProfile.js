@@ -23,7 +23,7 @@ const StudentProfile = () => {
   };
 
   return (
-    <section style={{ backgroudColor: 'whitesmoke' }}>
+    <section className='shadow' style={{ backgroudColor: 'whitesmoke' }}>
       <div className='container py-5'>
         <div className='row'>
           <div className='col-lg-3'>
