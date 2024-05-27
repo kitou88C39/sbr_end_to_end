@@ -46,6 +46,11 @@ const StudentProfile = () => {
                     <h5 className='mb-0'>Email</h5>
                   </div>
                 </div>
+                <div className='col-sm-9'>
+                  <p className='text-muted mb-0'>{student.email}</p>
+                </div>
+
+                <hr/>
 
                 <div className='row'>
                   <div className='col-sm-9'>
