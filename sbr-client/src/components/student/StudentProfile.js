@@ -1,13 +1,19 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import { useParams } from 'react-router-dom';
 
 const StudentProfile = () => {
+  const { id } = useParams();
   const [student, setStudent] = useState({
     firstName: '',
     lastName: '',
     email: '',
     department: '',
   });
+
+  useEffect(() => {
+    loadStudent();
+  }, []);
 
   const loadStudent = async () => {
     const result = await axios.get(
