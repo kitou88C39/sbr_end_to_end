@@ -1,7 +1,20 @@
 import React from 'react';
 
-const Search = () => {
-  return <div>Search</div>;
+const Search = ({ search, setSearch }) => {
+  return (
+    <div className='col-sm-6 mb-4'>
+      <form>
+        <input
+          className='form-controll'
+          type='search'
+          role='searchbox'
+          placeholder='Search students...'
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
+        ></input>
+      </form>
+    </div>
+  );
 };
 
 export default Search;
