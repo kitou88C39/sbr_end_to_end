@@ -3,11 +3,11 @@ import '../node_modules/boostrap/dist/js/boostrap.min.js';
 import './App.css';
 import Home from './Home';
 import NavBar from './components/common/NavBar.js';
-import StudentsView from './components/student/StudentsView.js';
 import AddStudent from './components/student/AddStudent.js';
 import EditStudent from './components/student/EditStudent.js';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import StudentProfile from './components/student/StudentProfile.js';
+import StudentsView from './components/student/StudentsView.js';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 function App() {
   return (
